@@ -1,0 +1,12 @@
+.nav {
+    height: 8vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.nav-links-right {
+    display: flex;
+}
