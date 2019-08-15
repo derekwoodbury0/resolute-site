@@ -7,4 +7,7 @@ let { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env
 
 app.use(express.json())
 
-app.listen(SERVER_PORT, () => console.log(`listening on port ${SERVER_PORT}`))
+massive(CONNECTION_STRING).then(db => {
+    app.set('db', db)
+    app.listen(SERVER_PORT, () => console.log(`listening on port ${SERVER_PORT}`))
+})

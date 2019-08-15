@@ -1,12 +1,22 @@
+* {
+    text-decoration: none;
+    color: black;
+}
+
 .nav {
-    height: 8vh;
+    height: 10vh;
     width: 100vw;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-left: 25px;
     padding-right: 25px;
+    /* background: rgba(100, 88, 88, 0.178); */
+    font-size: 20px;
 }
 
 .nav-links-right {
     display: flex;
+    width: 40vw;
+    justify-content: space-around;
 }
