@@ -36,8 +36,12 @@ class Nav extends Component {
                     </Link>
                     { this.props.user ?
                         <div>
-                            <h3 onClick={this.logout}>Logout</h3>
-                            <i className="fas fa-shopping-cart" style={{fontSize: '35px', color: 'white'}}></i>
+                            <div>
+                                <h3 onClick={this.logout}>Logout</h3>
+                            </div>
+                            <div>
+                                <i className="fas fa-shopping-cart" style={{fontSize: '35px', color: 'white'}}></i>
+                            </div>
                         </div>
                     :
                         <Link to="/login">

@@ -1,0 +1,27 @@
+.about-page-full {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-header {
+    margin-bottom: 35px;
+}
+
+.about-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90vw;
+    height: 400px;
+}
+
+.about-description {
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+    height: 325px;
+    border: 2px solid black;
+    font-size: 25px;
+}
