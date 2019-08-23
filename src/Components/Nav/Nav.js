@@ -1,10 +1,22 @@
 import React, { Component } from 'react'
 import './Nav.css'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { getUser, logout } from '../../redux/reducers/userReducer'
 
-export default class Nav extends Component {
+class Nav extends Component {
+
+    componentDidMount() {
+        this.props.getUser()
+    }
+
+    logout = async() => {
+        await this.props.logout()
+        this.props.history.push('/')
+    }
 
     render() {
+        console.log(this.props)
         return (
             <div className="nav">
                 <div>
@@ -22,8 +34,26 @@ export default class Nav extends Component {
                     <Link to="/contact">
                         <h3>Contact</h3>
                     </Link>
+                    { this.props.user ?
+                        <div>
+                            <h3 onClick={this.logout}>Logout</h3>
+                            <i className="fas fa-shopping-cart" style={{fontSize: '35px', color: 'white'}}></i>
+                        </div>
+                    :
+                        <Link to="/login">
+                            <h3>Login</h3>
+                        </Link>
+                    }
                 </div>
             </div>
         )
     }
 }
+
+const mapStateToProps = reduxState => {
+    return {
+        user: reduxState.userReducer.data
+    }
+}
+
+export default connect(mapStateToProps, { getUser, logout })(withRouter(Nav))
